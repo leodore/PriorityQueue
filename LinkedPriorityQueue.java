@@ -173,7 +173,8 @@ class Link<E> implements Cloneable {
 	public static <E> Link<E>[] listCopyWithTail(Link<E> source) {
 		Link<E> copyHead;
 		Link<E> copyTail;
-		Link<E>[] answer= (Link<E>[])new Object[2];
+		//or Link<E>[] answer= new Link[2];
+		Link<E>[] answer= (Link<E>[])new Link[2];
 		
 		if (source == null) return null;
 		
@@ -194,7 +195,7 @@ class Link<E> implements Cloneable {
 	public static <E> Link<E>[] listPart(Link<E> start, Link<E> end) {
 		Link<E> copyHead;
 		Link<E> copyTail;
-		Link<E>[] answer= (Link<E>[])new Object[2];
+		Link<E>[] answer= (Link<E>[])new Link[2];
 		
 		if (start == null) 
 			throw new IllegalArgumentException("start is null.");
