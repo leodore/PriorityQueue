@@ -73,7 +73,7 @@ public class LinkedPriorityQueue<E> implements Cloneable {
  	}
 }
 
-class Link<E> implements Cloneable {
+class Link<E> {
 	private E data;
 	private int priority;
 	private Link<E> next;
@@ -163,7 +163,7 @@ class Link<E> implements Cloneable {
 		
 		while (source.next != null) {
 			source = source.next;
-			copyHead.addNodeAfter(source.data, source.priority);
+			copyTail.addNodeAfter(source.data, source.priority);
 			copyTail = copyTail.next;			
 		}
 		
@@ -183,7 +183,7 @@ class Link<E> implements Cloneable {
 		
 		while (source.next != null) {
 			source = source.next;
-			copyHead.addNodeAfter(source.data, source.priority);
+			copyTail.addNodeAfter(source.data, source.priority);
 			copyTail = copyTail.next;			
 		}
 		
@@ -209,7 +209,7 @@ class Link<E> implements Cloneable {
 			start = start.next;
 			if (start == null) 
 				throw new IllegalArgumentException("end node was not found on the list.");
-			copyHead.addNodeAfter(start.data, start.priority);
+			copyTail.addNodeAfter(start.data, start.priority);
 			copyTail = copyTail.next;			
 		}
 		
